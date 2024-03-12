@@ -1,0 +1,16 @@
+REST API
+-  For client server common communications
+
+Why design ?
+
+CONS
+-  efforts to change api are more 
+- complexity of source code changes 
+-  leads to more versioning 
+
+PROS
+- east to manage 
+- certain standard 
+- increses the productivity of tem 
+- professionalism
+

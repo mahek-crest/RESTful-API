@@ -1,0 +1,190 @@
+
+STEP 1 : Create a New API 
+	Title : OpenApi Specification for CMD 
+	Description : API Specification document of the CMS System
+	Contact : Mahek (1234567890)
+	Version : 1.0 
+	
+STEP 2 : Indetify the type of API
+	public
+	
+
+Overview of RESTful API 
+---------------------------
+
+STEP 3 : Identify the server base URL 
+	http://{hostname}:{port}/{directory}
+	
+
+Designing API Resources 
+---------------------------
+	
+STEP 4: Identifying the resources 
+	course
+	student 
+	
+
+STEP 5 : Have resources as plural 
+	courses (api/courses)
+	students (api/students)
+	
+	
+STEP 6 : Define resource model 
+	Course Model:
+		Course Id 
+		Course Name 
+		Course Duration
+		Course Type
+	Student Model
+		Student Id
+		First Name
+		Last Name 
+		Phone Number 
+		Address 
+		
+	
+STEP 7 : Select the Indetifier for each resource
+	Course Model:
+		Course Id (IDENTIFIER)
+		Course Name 
+		Course Duration
+		Course Type
+	Student Model:
+		Student Id (IDENTIFIER)
+		First Name
+		Last Name 
+		Phone Number 
+		Address 
+	
+	
+Designing associations between resourses
+--------------------------------------
+
+STEP 8: Identify the associations for each resources
+	Courses 
+		/api/courses/{courseid}/students
+		/api/courses/{courseid}/subjects 
+
+
+STEP 9 : URL Complexity 
+	Courses 
+		/api/courses
+		/api/courses/{courseId}
+		/api/courses/{courseId}/students 
+		
+		
+Designing API Operations
+--------------------------------------
+STEP 10 :  Identify the operations for each resource
+	Courses 
+		/api/courses
+			GET 
+			POST
+			
+		/api/courses/{courseId}
+			GET 
+			PUT 
+			DELETE
+			
+		/api/courses/{courseId}/students 
+			GET
+			POST
+			
+ 
+ Designing API Request:
+ ---------------------------------------
+ 
+STEP 11 : Identify the parameters required for the operations
+	Query parameters
+		Noen 
+		
+	Path parameters
+		None - collections
+		CourseId - unique course id of the course model (applicable for individual item)
+		
+	Headers
+		None
+		
+	Cookies
+		None
+		
+
+STEP 12 : Identify the Content type of request for the operation 
+	application/json 
+	
+STEP 13: Identify the Request body for the operation	
+	/api/courses
+		GET 
+			None
+		POST
+			courseName
+			courseDuration 
+			courseType
+		DELETE 
+			None
+			
+	/api/courses/{courseId}/students
+		GET 
+			None
+		POST	
+			firstName
+			lastName
+			phoneNumber
+			address
+			
+STEP 14 : Identifyingthe HTTP status Code 
+
+STEP 15: Indentify the Content-Type of response for the operation 
+	application/json
+	
+STEP 16 : Identify the Response body for the opeartion
+	/api/courses
+		GET 
+			(array)
+			courseid
+			courseName
+			courseDuration 
+			courseType
+		POST
+			courseid
+			courseName
+			courseDuration 
+			courseType
+			
+	/api/courses/{courseId}
+		GET 
+			courseid
+			courseName
+			courseDuration 
+			courseType
+		PUT
+			firstName
+			lastName
+			phoneNumber
+			address
+		DELETE 
+			None 
+			
+					
+	/api/courses/{courseId}/students
+		GET 
+			(array)
+			firstName
+			lastName
+			phoneNumber
+			address
+		POST	
+			studentId
+			firstName
+			lastName
+			phoneNumber
+			address
+
+
+STEP 17 : Error handling
+
+STEP 18 :  Identify the need for filtering and add if needed
+
+STEP 19: identify the need for pagination and add if needed
+
+STEP 20 : Identify the need for sorting and add it needed 

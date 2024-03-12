@@ -1,0 +1,143 @@
+
+API for College Management System (CMS)
+
+API Overview 
+=========================================
+Title : OpenApi Specification for CMD 
+Description : API Specification document of the CMS System
+Contact : Mahek (1234567890)
+Version : 1.0 
+API Type : Public
+ServerURL : http://{hostname}:{port}/{directory}
+
+Courses
+=========================================
+	GET /api/courses
+	Content-Type: application/json
+	Request: None
+	Response:
+		HTTP 200 OK
+	Response Body Format:
+	    [
+			{
+				"courseId"
+				"CourseName"
+				"CourseDuration"
+				"CourseType"
+			}
+		]
+		
+	
+	------------------------------------
+	
+	POST /api/courses
+	Content-Type: application/json
+	Request: 
+		Request Body Format :
+		{
+			"CourseName"
+			"CourseDuration"
+			"CourseType"
+		}
+		Example : 
+		{
+			"CourseName" : "CSE"
+			"CourseDuration" : 4
+			"CourseType": "Engineering" 
+		}
+	Response:
+		HTTP 201 CREATED 
+		Response Body Format:
+			{
+				"courseId"
+				"CourseName"
+				"CourseDuration"
+				"CourseType"
+			}
+			
+		HTTP 400 BAD REQUEST 
+		Request body Format: 
+		{
+			"error":
+			{
+				"code",
+				"message"
+			}
+		}
+		
+	------------------------------------
+			
+	GET  /api/courses/{courseId}
+	Content-Type: application/json
+	Request: 
+		Request Body Format :
+		{
+			"CourseName"
+			"CourseDuration"
+			"CourseType"
+		}
+		Example : 
+		{
+			"CourseName" : "CSE"
+			"CourseDuration" : 4
+			"CourseType": "Engineering" 
+		}
+	Response:
+		HTTP 200 OK
+		Response Body Format:
+	    {
+				"courseId"
+				"CourseName"
+				"CourseDuration"
+				"CourseType"
+		}
+		
+		HTTP 404 FOUND 
+		Request body Format: 
+		{
+			"error":
+			{
+				"code",
+				"message"
+			}
+		}
+	
+	
+	------------------------------------
+	
+	PUT  /api/courses/{courseId}
+	Content-Type: application/json
+	
+	------------------------------------
+	
+	DELETE /api/courses/{courseId}		
+	Content-Type: application/json	
+	Request : None 
+	Response : 
+		HTTP 204 NO Content
+		HTTP 404 NOT FOUND
+	
+	------------------------------------
+		
+	GET /api/courses/{courseId}/students 
+	Content-Type: application/json
+	
+	------------------------------------
+	
+	POST /api/courses/{courseId}/students 
+	Content-Type: application/json
+	Request : 
+		Request Body Format :
+		{
+			"firstName"
+			"lastName"
+			"phoneNumber"
+			"address"
+		}
+		Example"
+		{
+			"firstName": "James"
+			"lastName" "Smith"
+			"phoneNumber" : "555-555-1234"
+			"address" : "US"
+		}	
